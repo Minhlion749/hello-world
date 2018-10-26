@@ -1,12 +1,106 @@
+// Bai 2.1
+#include<iostream>
+using namespace std;
+struct phone
+{
+int areacode;
+int exchange;
+int number;
+};
+int main()
+{
+phone ph1={212,767,8900};
+phone ph2;
+cout<<"\nEnter your area code,exchange and number:";
+cin>>ph2.areacode>>ph2.exchange>>ph2.number;
+cout<<"\nMy number is ("<<ph1.areacode<<")"<<ph1.exchange<<"-"<<ph1.number;
+cout<<"\nYour number is ("<<ph2.areacode<<")"<<ph2.exchange<<"-"<<ph2.number;
+return 0;
+}
+
+// Bai 2.2
 #include <iostream>
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
-    cout<<"*       *  * * *  *     *  *     *\n"; 
-    cout<<"**     **    *    * *   *  *     *\n"; 
-    cout<<"* *   * *    *    *  *  *  * * * *\n"; 
-    cout<<"*  * *  *    *    *   * *  *     *\n"; 
-    cout<<"*   *   *  * * *  *     *  *     *\n";
-    return 0;
+	int year;                                                                       
+    float initial_amount , interest_rate;
+
+    cout << "\nEnter initial amount: ";                                  
+    cin >> initial_amount;
+    cout << "\nEnter number of years: ";
+    cin >> year;
+    cout << "\nEnter interest rate (percent per year): ";
+    cin >> interest_rate;
+
+    for (int i = 1; i <= year ; i++)
+        {
+            initial_amount = initial_amount + (initial_amount * interest_rate/100);
+        }
+
+    cout<<"\nYou will have: "<< initial_amount << " dollars";
+
+	return 0;
+}
+
+// Bai 2.3
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	double n1, n2, ans;
+    char oper, ch;
+    do {
+    	cout << "\nEnter first number, operator, second number : ";
+        cin >> n1 >> oper >> n2;
+        switch (oper)
+        {
+        case '+':  ans = n1 + n2;  break;
+        case '-':  ans = n1 - n2;  break;
+        case '*':  ans = n1 * n2;  break;
+        case '/':  ans = n1 / n2;  break;
+        default:   ans = 0;
+        }
+        cout << "Answer = " << ans;
+        cout << "\nDo another (y/n) ? ";
+        cin >> ch;
+       } while (ch != 'n');
+	return 0;
+}
+
+// Bai 2.4
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	float a, b, c, d;
+	char oper,ch;
+	do {	
+	cout << "Nhap a,b,c,d : ";
+	cin >> a >> b >> c >> d;
+	cout << "\nNhap phep toan(+,-,*,/): ";
+	cin >> oper;
+	if (oper == '+')
+	{
+		cout << "Phep cong: " << (a*d + b*c) / (b*d);
+	}
+	if (oper == '-')
+	{
+		cout << "Phep tru: " << (a*d - b*c) / (b*d);
+	}
+	if (oper == '*')
+	{
+		cout << "Phep nhan: " << (a*c) / (b*d);
+	}
+	if (oper == '/')
+	{
+		cout << "Phep chia: " << (a*d) / (b*c);
+	}
+		cout << "\nBan muon tiep tuc k (y/n)? ";
+        cin >> ch;
+    } while (ch != 'n');
+	return 0;
 }
