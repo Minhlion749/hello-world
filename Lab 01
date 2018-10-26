@@ -1,3 +1,4 @@
+//Bai 1
 #include <iostream>
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -5,4 +6,18 @@ using namespace std;
 int main(int argc, char** argv) {
 	cout << "HELLO WORLD";
 	return 0;
+}
+
+//Bai 2
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+    cout<<"*       *  * * *  *     *  *     *\n"; 
+    cout<<"**     **    *    * *   *  *     *\n"; 
+    cout<<"* *   * *    *    *  *  *  * * * *\n"; 
+    cout<<"*  * *  *    *    *   * *  *     *\n"; 
+    cout<<"*   *   *  * * *  *     *  *     *\n";
+    return 0;
 }
