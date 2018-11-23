@@ -1,1 +1,112 @@
+// Bai 3.1
+#include <iostream>
+#include <conio.h>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+class time{
+	private:
+		int hours,minutes,seconds;
+	public:
+		time(){
+			hours = minutes = seconds = 0;
+		}
+		time(int h, int m, int s){
+		hours = h;
+		minutes = m;
+		seconds = s;
+		}
+	void showTime() const {
+		cout<<"The time is : "<<hours<<":"<<minutes<<":"<<seconds;
+	}
+	void addTime(time t1, time t2){
+		seconds = t1.seconds + t2.seconds;
+		if(seconds>=60){
+			seconds=seconds-60;
+			minutes++;
+		}
+		minutes += t1.minutes + t2.minutes;
+		if(minutes>=60){
+			minutes=minutes-60;
+			hours++;
+		}
+		hours += t1.hours + t2.hours;
+	}
+};
+int main(int argc, char** argv){
+	const time t1(8,00,01), t2(11,59,59);
+	time t3;
+	t3.addTime(t1,t2);
+	t3.showTime();
+}
 
+
+// Bai 3.2
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+class employee{
+	private:
+		int eNum;
+		float eCom;
+		int year;
+	public:
+		void eData(){
+			cout << "Please enter the employee number : ";
+			cin >> eNum;			 
+			cout << "Please enter the employee 's compensation: ";
+			cin >> eCom;
+			cout << "Please enter number of years :";
+			cin >> year;
+			cout <<endl;
+			for(int i=1; i<= year; i++)
+			{
+				eCom = eCom +(eCom * 0.055);
+			}
+		}
+		void display(){
+			cout << "Employee number: "<<eNum<<endl;
+			cout << "Employee 's compensation: "<<eCom<<endl;
+		}
+};
+int main(int argc, char** argv) {
+	employee e1,e2,e3;
+	cout <<"\nThe first employee"<<endl;
+	e1.eData();
+	e1.display();
+	cout <<"\nThe second employee"<<endl;
+	e2.eData();
+	e2.display();
+	cout <<"\nThe third employee"<<endl;
+	e3.eData();
+	e3.display();
+	return 0;
+}
+
+
+// Bai 3.3
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+class counter{
+    private:
+		static int count;	
+		int num;
+	public:
+		counter(){
+            static int count=1;
+            num=count;
+            count++;
+        }
+		void show()
+		{
+            cout<<"I am Oject "<<num<<endl;
+        }
+};
+int main(int argc, char** argv) {
+	counter a[3];
+    for(int i=0;i<3;i++)
+    {
+    	a[i].show();
+    }
+	return 0;
+}
